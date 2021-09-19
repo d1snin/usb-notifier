@@ -10,11 +10,11 @@ plugins {
 
 javafx {
     version = "11"
-    modules = listOf("javafx.media", "javafx.base")
+    modules = listOf("javafx.base", "javafx.media")
 }
 
 group = "fun.d1snin.usbnotifier"
-version = "0.0.1-SNAPSHOT"
+version = "1.0.0-74e0af9e"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 configurations {
@@ -28,10 +28,11 @@ repositories {
 }
 
 val usb4j = "1.3.0"
+val javafx = "18-ea+2"
 
 dependencies {
-    implementation("org.openjfx:javafx-base:18-ea+2")
-    implementation("org.openjfx:javafx-media:18-ea+2")
+    implementation("org.openjfx:javafx-base:$javafx")
+    implementation("org.openjfx:javafx-media:$javafx")
     implementation("org.usb4java:usb4java-javax:$usb4j")
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")

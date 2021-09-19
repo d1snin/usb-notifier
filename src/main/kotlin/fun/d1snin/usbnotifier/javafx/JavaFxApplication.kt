@@ -1,4 +1,4 @@
-package `fun`.d1snin.usbnotifier.usbnotifier.javafx
+package `fun`.d1snin.usbnotifier.javafx
 
 import javafx.application.Application
 import javafx.stage.Stage

@@ -1,10 +1,11 @@
-package `fun`.d1snin.usbnotifier.usbnotifier.service.impl
+package `fun`.d1snin.usbnotifier.service.impl
 
-import `fun`.d1snin.usbnotifier.usbnotifier.service.SoundPlayerService
-import `fun`.d1snin.usbnotifier.usbnotifier.service.UsbListenerService
+import `fun`.d1snin.usbnotifier.service.SoundPlayerService
+import `fun`.d1snin.usbnotifier.service.UsbListenerService
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import java.util.*
 import javax.usb.UsbHostManager
 import javax.usb.event.UsbServicesEvent
 import javax.usb.event.UsbServicesListener
@@ -16,11 +17,16 @@ class UsbListenerServiceImpl @Autowired constructor(val soundPlayerService: Soun
 
     override fun startListening() {
         val services = UsbHostManager.getUsbServices()
+        val queue: Queue<Int> = LinkedList(services.rootUsbHub.attachedUsbDevices.indices.toMutableList())
 
         services.addUsbServicesListener(object : UsbServicesListener {
             override fun usbDeviceAttached(event: UsbServicesEvent?) {
-                log.info("Device attached. Playing sound.")
-                soundPlayerService.playSoundOnAttach()
+                queue.remove()
+
+                if (queue.isEmpty()) { // preventing sound producing at startup.
+                    log.info("Device attached. Playing sound.")
+                    soundPlayerService.playSoundOnAttach()
+                }
             }
 
             override fun usbDeviceDetached(event: UsbServicesEvent?) {

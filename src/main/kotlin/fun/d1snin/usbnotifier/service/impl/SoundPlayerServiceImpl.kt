@@ -1,7 +1,7 @@
-package `fun`.d1snin.usbnotifier.usbnotifier.service.impl
+package `fun`.d1snin.usbnotifier.service.impl
 
-import `fun`.d1snin.usbnotifier.usbnotifier.configuration.SoundsConfiguration
-import `fun`.d1snin.usbnotifier.usbnotifier.service.SoundPlayerService
+import `fun`.d1snin.usbnotifier.configuration.SoundsConfiguration
+import `fun`.d1snin.usbnotifier.service.SoundPlayerService
 import javafx.scene.media.Media
 import javafx.scene.media.MediaPlayer
 import org.springframework.beans.factory.annotation.Autowired

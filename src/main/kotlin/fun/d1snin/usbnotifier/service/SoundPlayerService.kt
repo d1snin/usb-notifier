@@ -1,4 +1,4 @@
-package `fun`.d1snin.usbnotifier.usbnotifier.service
+package `fun`.d1snin.usbnotifier.service
 
 interface SoundPlayerService {
 

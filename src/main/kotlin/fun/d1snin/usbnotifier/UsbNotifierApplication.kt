@@ -1,6 +1,6 @@
-package `fun`.d1snin.usbnotifier.usbnotifier
+package `fun`.d1snin.usbnotifier
 
-import `fun`.d1snin.usbnotifier.usbnotifier.javafx.JavaFxApplication
+import `fun`.d1snin.usbnotifier.javafx.JavaFxApplication
 import javafx.application.Application
 import org.springframework.boot.WebApplicationType
 import org.springframework.boot.autoconfigure.SpringBootApplication
