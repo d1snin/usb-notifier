@@ -1,0 +1,3 @@
+usb-notifier:
+  sounds:
+    soundOnAttach: "classpath:moo.wav"
