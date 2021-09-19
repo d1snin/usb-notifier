@@ -17,7 +17,7 @@ class UsbListenerServiceImpl @Autowired constructor(val soundPlayerService: Soun
 
     override fun startListening() {
         val services = UsbHostManager.getUsbServices()
-        val queue: Queue<Int> = LinkedList(services.rootUsbHub.attachedUsbDevices.indices.toMutableList())
+        val queue: Queue<Int> = LinkedList(services.rootUsbHub.attachedUsbDevices.indices.toList())
 
         services.addUsbServicesListener(object : UsbServicesListener {
             override fun usbDeviceAttached(event: UsbServicesEvent?) {
